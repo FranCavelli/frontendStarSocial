@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: linear-gradient(180deg, #fff8f1 0%, #fde2d6 60%, #f7c8d4 100%);
+  background-attachment: fixed;
+  color: #2e2a2a;
+  font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: #f7c8d4;
+  color: #2e2a2a;
+}
+
+/* Soft scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #f5bfab;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md rounded-3xl shadow-card border border-white/60;
+  }
+  .pill {
+    @apply rounded-full px-4 py-1.5 text-sm font-semibold transition;
+  }
+  .pill-primary {
+    @apply pill bg-peachDark text-white hover:bg-[#ea9f86] shadow-soft;
+  }
+  .pill-ghost {
+    @apply pill bg-white/70 text-ink hover:bg-white;
+  }
+  .input-soft {
+    @apply w-full rounded-2xl bg-white/80 border border-peach/70 px-5 py-3 text-ink placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-peachDark/50;
+  }
+}
